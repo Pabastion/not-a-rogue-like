@@ -3,12 +3,12 @@
 [ext_resource path="res://Node2D.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -19,6 +19,7 @@ position = Vector2( 384, 224 )
 
 [node name="KinematicBody" type="KinematicBody2D" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 128, 96 )
 input_pickable = false
 collision_layer = 1
@@ -37,10 +38,15 @@ texture = ExtResource( 2 )
 
 position = Vector2( -4.76837e-06, -8.58307e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+[node name="Walls" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls" index="0"]
+
+editor/display_folded = true
 position = Vector2( -288, 352 )
 input_pickable = false
 collision_layer = 1
@@ -53,19 +59,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." index="2"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls" index="1"]
 
+editor/display_folded = true
 position = Vector2( 160, 352 )
 input_pickable = false
 collision_layer = 1
@@ -78,19 +85,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D2" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D2" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D11" type="StaticBody2D" parent="." index="3"]
+[node name="StaticBody2D11" type="StaticBody2D" parent="Walls" index="2"]
 
+editor/display_folded = true
 position = Vector2( 32, 160 )
 input_pickable = false
 collision_layer = 1
@@ -103,19 +111,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D11" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D11" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D11" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D18" type="StaticBody2D" parent="." index="4"]
+[node name="StaticBody2D18" type="StaticBody2D" parent="Walls" index="3"]
 
+editor/display_folded = true
 position = Vector2( -224, 160 )
 input_pickable = false
 collision_layer = 1
@@ -128,19 +137,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D18" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D18" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D18" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D18" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D15" type="StaticBody2D" parent="." index="5"]
+[node name="StaticBody2D15" type="StaticBody2D" parent="Walls" index="4"]
 
+editor/display_folded = true
 position = Vector2( 160, 224 )
 input_pickable = false
 collision_layer = 1
@@ -153,19 +163,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D15" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D15" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D15" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D15" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D16" type="StaticBody2D" parent="." index="6"]
+[node name="StaticBody2D16" type="StaticBody2D" parent="Walls" index="5"]
 
+editor/display_folded = true
 position = Vector2( 160, 288 )
 input_pickable = false
 collision_layer = 1
@@ -178,19 +189,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D16" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D16" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D16" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D16" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D17" type="StaticBody2D" parent="." index="7"]
+[node name="StaticBody2D17" type="StaticBody2D" parent="Walls" index="6"]
 
+editor/display_folded = true
 position = Vector2( 32, 288 )
 input_pickable = false
 collision_layer = 1
@@ -203,19 +215,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D17" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D17" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D17" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D17" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D12" type="StaticBody2D" parent="." index="8"]
+[node name="StaticBody2D12" type="StaticBody2D" parent="Walls" index="7"]
 
+editor/display_folded = true
 position = Vector2( -224, 224 )
 input_pickable = false
 collision_layer = 1
@@ -228,19 +241,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D12" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D12" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D12" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D13" type="StaticBody2D" parent="." index="9"]
+[node name="StaticBody2D13" type="StaticBody2D" parent="Walls" index="8"]
 
+editor/display_folded = true
 position = Vector2( -352, 160 )
 input_pickable = false
 collision_layer = 1
@@ -253,19 +267,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D13" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D13" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D13" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D14" type="StaticBody2D" parent="." index="10"]
+[node name="StaticBody2D14" type="StaticBody2D" parent="Walls" index="9"]
 
+editor/display_folded = true
 position = Vector2( -224, 288 )
 input_pickable = false
 collision_layer = 1
@@ -278,19 +293,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D14" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D14" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D14" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D14" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="." index="11"]
+[node name="StaticBody2D7" type="StaticBody2D" parent="Walls" index="10"]
 
+editor/display_folded = true
 position = Vector2( 32, 224 )
 input_pickable = false
 collision_layer = 1
@@ -303,19 +319,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D7" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D7" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D7" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D8" type="StaticBody2D" parent="." index="12"]
+[node name="StaticBody2D8" type="StaticBody2D" parent="Walls" index="11"]
 
+editor/display_folded = true
 position = Vector2( -32, 352 )
 input_pickable = false
 collision_layer = 1
@@ -328,19 +345,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D8" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D8" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D8" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D9" type="StaticBody2D" parent="." index="13"]
+[node name="StaticBody2D9" type="StaticBody2D" parent="Walls" index="12"]
 
+editor/display_folded = true
 position = Vector2( -352, 352 )
 input_pickable = false
 collision_layer = 1
@@ -353,19 +371,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D9" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D9" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D9" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D10" type="StaticBody2D" parent="." index="14"]
+[node name="StaticBody2D10" type="StaticBody2D" parent="Walls" index="13"]
 
+editor/display_folded = true
 position = Vector2( 32, 352 )
 input_pickable = false
 collision_layer = 1
@@ -378,19 +397,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D10" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D10" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D10" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." index="15"]
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls" index="14"]
 
+editor/display_folded = true
 position = Vector2( -160, 352 )
 input_pickable = false
 collision_layer = 1
@@ -403,19 +423,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D3" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D3" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="." index="16"]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls" index="15"]
 
+editor/display_folded = true
 position = Vector2( -224, 352 )
 input_pickable = false
 collision_layer = 1
@@ -428,19 +449,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D4" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D4" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="." index="17"]
+[node name="StaticBody2D5" type="StaticBody2D" parent="Walls" index="16"]
 
+editor/display_folded = true
 position = Vector2( -352, 224 )
 input_pickable = false
 collision_layer = 1
@@ -453,19 +475,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D5" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D5" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D5" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="." index="18"]
+[node name="StaticBody2D6" type="StaticBody2D" parent="Walls" index="17"]
 
+editor/display_folded = true
 position = Vector2( -352, 288 )
 input_pickable = false
 collision_layer = 1
@@ -478,15 +501,15 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D6" index="0"]
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D6" index="0"]
 
 modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D6" index="1"]
 
 position = Vector2( 4.76837e-06, 1.90735e-06 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 
